@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.video-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+.custom-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#timer{
+    color: rgb(66, 64, 64);
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* input[type="range"] {
+    width: 100%;
+    margin: 0 10px;
+    -webkit-appearance: none;
+    appearance: none;
+} */
+
+
+input[type="range"] {
+    width: 100%;
+    margin: 0 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgb(66, 64, 64);
+    border-radius: 10px;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 20px;
+    width: 30px;
+  
+    background-image: url("kukeriicon.png");
+    background-size: cover;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+  
+    transform: rotateZ(var(--thumb-rotate, 0deg));
+  }
+  
