@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const stopBtn = document.getElementById('stopBtn');
     const timer = document.getElementById('timer');
     const videoSlider = document.getElementById('videoSlider');
+    const darkModeBtn = document.getElementById('darkModeBtn');
 
     playPauseBtn.addEventListener('click', togglePlayPause);
     stopBtn.addEventListener('click', stopVideo);
     video.addEventListener('timeupdate', updateTimer);
     videoSlider.addEventListener('input', seekVideo);
+    darkModeBtn.addEventListener('click', toggleDarkMode);
 
     function togglePlayPause() {
         if (video.paused || video.ended) {
@@ -44,6 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function seekVideo() {
         const seekTime = (videoSlider.value / 100) * video.duration;
         video.currentTime = seekTime;
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-theme');
+        
     }
 
 

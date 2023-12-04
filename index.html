@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>HTML Media</title>
 </head>
-<body>
-    <div class="video-container">
-        <video id="customVideo" src="video.mp4"></video>
-        <div class="custom-controls">
-            <button id="playPauseBtn">Play</button>
-            <button id="stopBtn">Stop</button>
-            <span id="timer">0:00</span>
-            <input type="range" id="videoSlider" min="0" max="100" step="1" value="0">
-        </div>
-    </div>
 
+<body>
+    <header>
+        <nav>
+            <button id="darkModeBtn"></button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main-heading">The Mysteries of Bulgaria's Folk Tradition</h1>
+        <div class="video-wrapper">
+            <div class="video-text left-text">
+                <h1 class="video-text-title">Kukeri</h1>
+                <p class="text">Kukeri are elaborately costumed Bulgarian
+                    men, who perform traditional rituals intended to scare away evil spirits. This Bulgarian tradition
+                    has been practiced since Thracian times and is of a Thracian origin.
+                    The costumes cover most of the body and include decorated wooden masks of animals
+                    (sometimes double-faced) and large bells attached to the belt. Around New Year and before Lent, the
+                    Kukeri walk and dance through villages to scare away evil spirits with their costumes and the sound
+                    of their bells. They are also believed to provide a good harvest, health, and happiness to the
+                    village for the year ahead.
+                </p>
+            </div>
+            <div class="video-container">
+                <video id="customVideo" src="video.mp4"></video>
+                <div class="custom-controls">
+                    <button id="playPauseBtn">Play</button>
+                    <button id="stopBtn">Stop</button>
+                    <span id="timer">0:00</span>
+                    <input type="range" id="videoSlider" min="0" max="100" step="1" value="0">
+                </div>
+            </div>
+            <div class="video-text right-text">
+                <h1 class="video-text-title">Distribution and etymology</h1>
+                <p class="text">
+                    The custom is generally thought to be related to the Thracian Dionysos cult in the wider area of
+                    Thracia and similar rituals can also be found in much of the Balkans.
+                    The term could be derived from Proto-Slavic kuka ("evil spirit") or from a pre-Slavic divinity named
+                    Kuk.
+                    The Kukeri traditionally visit people's houses at night so that "the sun would not catch them on the
+                    road. After parading around the village, they usually gather at the village square
+                    to dance wildly and amuse the people. Kukeri rituals vary by region, but remain largely the same in
+                    essence.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 All rights reserved</p>
+    </footer>
 
     <script src="app.js"></script>
 </body>
+
 </html>
