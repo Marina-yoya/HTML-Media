@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: #dddbdb;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -78,20 +79,18 @@ input[type="range"] {
     border-radius: 10px;
 }
 
-
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     height: 20px;
     width: 30px;
-    background-image: url("kukeriicon.png");
+    background-image: url("assets/kukeriicon.png");
     background-size: cover;
     border-radius: 50%;
     border: none;
     transition: .2s ease-in-out;
     transform: rotateZ(var(--thumb-rotate, 0deg));
 }
-
 
 body.dark-theme {
     background-color: #333;
@@ -148,19 +147,106 @@ footer {
     order: 2;
 }
 
+.section-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 20px;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    height: 10%;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 1em;
+    display: flex;
+}
+
+button .arrow {
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.3s ease-out;
+    outline: none;
+}
+
+#right-btn {
+    margin: auto 0 auto -2em;
+}
+
+#right-btn .arrow {
+    transform: rotate(-45deg);
+}
+
+#left-btn {
+    z-index: 0;
+    margin: auto -2em auto 0;
+}
+
+#left-btn .arrow {
+    transform: rotate(135deg);
+}
+
+.text-wrapper {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.text-wrapper p {
+    font-family: sans-serif;
+    line-height: 2.6;
+    margin-left: 20px;
+}
 
 @media screen and (max-width: 600px) {
-    .video-wrapper {
+
+    .video-wrapper,
+    .section-wrapper {
         flex-direction: column;
     }
 
     .video-text {
         order: 2;
     }
+
+    .text-wrapper p {
+        line-height: 1.5;
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .video-wrapper {
+
+    .video-wrapper,
+    .section-wrapper {
         flex-direction: column;
     }
 
@@ -182,7 +268,9 @@ footer {
 
 
 @media screen and (max-width: 480px) {
-    .video-wrapper {
+
+    .video-wrapper,
+    .section-wrapper {
         flex-direction: column;
     }
 

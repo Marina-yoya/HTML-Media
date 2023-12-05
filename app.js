@@ -50,8 +50,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleDarkMode() {
         document.body.classList.toggle('dark-theme');
-        
+
     }
+
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        images.forEach(image => image.style.display = 'none');
+        textWrappers.forEach(textWrapper => textWrapper.style.display = 'none');
+
+        images[currentIndex].style.display = 'block';
+        textWrappers[currentIndex].style.display = 'block';
+    }
+
+    const images = document.querySelectorAll('.carousel');
+    const textWrappers = document.querySelectorAll('.text-wrapper');
+
+    const leftButton = document.getElementById('left-btn');
+    const rightButton = document.getElementById('right-btn');
+
+    leftButton.addEventListener('click', () => moveCarousel(-1));
+    rightButton.addEventListener('click', () => moveCarousel(1));
+
+    updateCarousel();
+
+
+
+
+
+
+
 
 
 });
