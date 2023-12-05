@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const timer = document.getElementById('timer');
     const videoSlider = document.getElementById('videoSlider');
     const darkModeBtn = document.getElementById('darkModeBtn');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+    }
 
     playPauseBtn.addEventListener('click', togglePlayPause);
     stopBtn.addEventListener('click', stopVideo);
@@ -50,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleDarkMode() {
         document.body.classList.toggle('dark-theme');
+        const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : '';
+        localStorage.setItem('theme', currentTheme);
 
     }
 
@@ -85,14 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     rightButton.addEventListener('click', () => moveCarousel(1));
 
     updateCarousel();
-
-
-
-
-
-
-
-
 
 });
 
